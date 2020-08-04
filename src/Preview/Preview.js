@@ -2,6 +2,7 @@
 import * as styles from "./Preview.module.scss";
 import {Background} from "./Background";
 
+
 const width = 2970;
 const height = 2100;
 const midpoint = width/2;
@@ -9,14 +10,14 @@ const menuWidth = 700;
 const barMenuStart = width/4 - menuWidth/2;
 const cocktailMenuStart = width*3/4 - menuWidth/2;
 
-export const Preview = () => {
+export const Preview = ({selectedTitle}) => {
     return (
         <section>
             <h2>Preview</h2>
             <svg className={styles.menu} viewBox={`0, 0, ${width}, ${height}`}>
                 <Background width={width} height={height}/>
 
-                <text textAnchor="middle" x={midpoint} y={200} className={styles.title}>Mike's Cocktail Bar</text>
+                <text textAnchor="middle" x={midpoint} y={200} className={styles.title}>{selectedTitle}</text>
                 
                 <g transform={`translate(${barMenuStart}, 500)`}>
                     <text textAnchor={"middle"} x={menuWidth/2} y={0} className={styles.subtitle}>Bar Menu</text>
@@ -39,7 +40,7 @@ export const Preview = () => {
     );
 };
 
-const MenuItem = ({y, name, price, description, descriptionLine2}) => {
+export const MenuItem = ({y, name, price, description, descriptionLine2}) => {
     return (
         <g>
             <text textAnchor={"start"} x={0} y={y} className={styles.menuItem}>{name}</text>
