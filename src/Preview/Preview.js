@@ -10,7 +10,7 @@ const menuWidth = 700;
 const barMenuStart = width/4 - menuWidth/2;
 const cocktailMenuStart = width*3/4 - menuWidth/2;
 
-export const Preview = ({selectedTitle}) => {
+export const Preview = ({selectedTitle, selectedItem}) => {
     return (
         <section>
             <h2>Preview</h2>
@@ -21,7 +21,7 @@ export const Preview = ({selectedTitle}) => {
                 
                 <g transform={`translate(${barMenuStart}, 500)`}>
                     <text textAnchor={"middle"} x={menuWidth/2} y={0} className={styles.subtitle}>Bar Menu</text>
-                    <MenuItem y={150} name="Garlic Bread" price={5} description={"Tomato Sauce, Garlic"}/>
+                    <MenuItem y={150} name= {selectedItem} price={5} description={"Tomato Sauce, Garlic"}/>
                     <MenuItem y={350} name="Margherita" price={8} description={"Tomato Sauce and mozzarella"}/>
                     <MenuItem y={550} name="Caprino" price={10} description={"Goat's cheese, asparagus and parmesan"}/>
                     <MenuItem y={750} name="Hawaiian" price={9} description={"Ham and pineapple"}/>
